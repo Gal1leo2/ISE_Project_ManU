@@ -12,6 +12,7 @@ BackEnd/node_modules/
 BackEnd/dist/
 BackEnd/.env
 BackEnd/src/config/firebaseServices.json
+BackEnd/docs.md
 
 # FrontEnd 
 FrontEnd/node_modules/
