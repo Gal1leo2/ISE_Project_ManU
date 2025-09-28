@@ -11,7 +11,7 @@ yarn-error.log*
 BackEnd/node_modules/
 BackEnd/dist/
 BackEnd/.env
-BackEnd/.json
+BackEnd/src/config/firebaseServices.json
 
 # FrontEnd 
 FrontEnd/node_modules/
