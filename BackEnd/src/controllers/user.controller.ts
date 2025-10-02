@@ -17,4 +17,48 @@ export class UserController {
     return c.json({ message: "Register Success!", response: response }, 201)
 
   };
+
+  getUserById = async (c: Context) => {
+    try {
+
+      const uid = c.req.param('id');
+      const response = await this.userServices.getUserById(uid);
+      return c.json(response, 200)
+
+    } catch (error: any) {
+
+      return c.json({ message: error.message }, 400)
+
+    }
+  }
+  getUserBookmarks = async (c: Context) => {
+    try {
+      const uid = c.req.param('id');
+      const response = await this.userServices.getUserBookmarks(uid);
+      return c.json(response, 200)
+    } catch (error: any) {
+      return c.json({ message: error.message }, 400)
+    }
+  }
+  createUserBookmark = async (c: Context) => {
+    try {
+      const { bookmarkId } = await c.req.json();
+      const user = await c.get('user')
+      const response = await this.userServices.createUserBookmark(user.uid, bookmarkId);
+      return c.json({ message: response }, 201)
+    } catch (error: any) {
+      return c.json({ message: error.message }, 400)
+    }
+  }
+  deleteUserBookmark = async (c: Context) => {
+    try {
+      const user = await c.get('user')
+      const bookmarkId = c.req.param('id');
+      const response = await this.userServices.deleteUserBookmark(user.uid, bookmarkId);
+      return c.json({ message: response }, 200)
+    } catch (error: any) {
+      return c.json({ message: error.message }, 400)
+    }
+  }
+
 }
