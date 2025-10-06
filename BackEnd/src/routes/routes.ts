@@ -21,7 +21,7 @@ router.delete('/bookmarks/:id',authMiddleware, userController.deleteUserBookmark
 router.get('/promotions', promotionsController.getAllPromotion)
 router.get('/promotions/:id', promotionsController.getPromotionById)
 router.get('/promotions/recommended', promotionsController.getPromotionRecommended)
-router.post('/promotions/recommended', promotionsController.promotionCompare)
+router.post('/promotions/compare', promotionsController.promotionCompare)
 
 
 //Review Rate
