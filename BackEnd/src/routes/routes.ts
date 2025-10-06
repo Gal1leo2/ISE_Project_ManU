@@ -2,11 +2,13 @@ import { Hono } from "hono";
 import { UserController } from "../controllers/user.controller.js";
 import { authMiddleware } from "../middlewares/auth.js";
 import { PromotionsController } from "../controllers/promotions.controller.js";
+import { ReviewsController } from "../controllers/reviews.controller.js";
 
 const router = new Hono();
 
 const userController = new UserController();
 const promotionsController = new PromotionsController();
+const reviewsController = new ReviewsController();
 
 
 //user
@@ -25,7 +27,7 @@ router.post('/promotions/compare', promotionsController.promotionCompare)
 
 
 //Review Rate
-router.post('/review')
-router.get('/promotions/:id/reviews')
+router.post('/reviews',authMiddleware, reviewsController.createReview)
+router.get('/promotions/:id/reviews', reviewsController.getReviewsByPromotionId)
 
 export default router;
