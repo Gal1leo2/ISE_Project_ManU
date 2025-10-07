@@ -66,9 +66,19 @@
 
 <div class="min-h-screen bg-gray-50">
   <header class="bg-white border-b">
-    <div class="max-w-7xl mx-auto px-4 py-6">
-      <h1 class="text-3xl font-bold text-gray-900">ระบบการตรวจสอบโปรโมชั่นมือถือ</h1>
-      <p class="text-gray-600 mt-1">เปรียบเทียบแพ็กเกจและโปรโมชั่นจากค่ายต่างๆ</p>
+    <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+      <div>
+        <h1 class="text-3xl font-bold text-gray-900">ระบบการตรวจสอบโปรโมชั่นมือถือ</h1>
+        <p class="text-gray-600 mt-1">เปรียบเทียบแพ็กเกจและโปรโมชั่นจากค่ายต่างๆ</p>
+      </div>
+      <div class="flex gap-4">
+        <a href="/admin" class="text-gray-600 hover:text-gray-900 font-medium">
+          แอดมิน
+        </a>
+        <a href="/login" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+          เข้าสู่ระบบ
+        </a>
+      </div>
     </div>
   </header>
 
